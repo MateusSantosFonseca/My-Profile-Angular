@@ -1,0 +1,37 @@
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(237, 237, 237, 1);
+  color: rgb(101, 108, 116);
+  height: 65px;
+}
+
+.div-icones {
+  margin-top: -0.5%;
+}
+
+.icones-redes-sociais {
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  footer {
+    height: 80px;
+  }
+  .ano-atual {
+    display: none !important;
+  }
+  .criado-por {
+    display: none !important;
+  }
+  .icones-redes-sociais {
+    font-size: 32px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
