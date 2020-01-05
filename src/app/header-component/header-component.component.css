@@ -1,9 +1,41 @@
 header {
   padding: 20px;
   text-align: center;
-  background: #7dbdd0bd;
-  color: white;
+  background: rgba(59, 89, 152, 1);
+  color: #FFF !important;
   font-size: 20px;
-  position: fixed;
   width: 100%;
+  position: fixed;
 }
+
+.nav-nome {
+  float: left;
+  font-family: Lato-Regular, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+/*Ver se fica mais bonito com ou sem*/
+
+.nav-nome:hover {
+  color: rgb(196, 211, 228);
+}
+
+.nav-links {
+  margin-top: 2%;
+  text-decoration: none;
+  float: right;
+  color: #FFF;
+}
+
+.nav-links:hover {
+  color: rgb(196, 211, 228);
+}
+
+.margem-header {
+  margin-bottom: 30px;
+}
+
+/*Lembrar de inserir media query para margem-header*/
