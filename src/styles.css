@@ -54,12 +54,59 @@
   margin: 0 auto;
 }
 
-.botao-padrao{
-  padding: 8px 14px 8px 14px !important;
+.botao-snippet {
   background-color: rgba(59, 89, 152, 1) !important;
   border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Genera, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 18px 10px 18px !important;
 }
 
-.botao-padrao:hover{
+.botao-snippet:before,
+.botao-snippet:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+
+.botao-snippet:before {
+  border-color: #2867B2 !important;
+  border-top-width: 2px;
+  left: 0px;
+  top: -5px;
+}
+
+.botao-snippet:after {
+  border-bottom-width: 2px;
+  border-color: #2867B2 !important;
+  bottom: -5px;
+  right: 0px;
+}
+
+.botao-snippet:hover,
+.botao-snippet.hover {
   background-color: #2867B2 !important;
+}
+
+.botao-snippet:hover:before,
+.botao-snippet.hover:before,
+.botao-snippet:hover:after,
+.botao-snippet.hover:after {
+  height: 100%;
+  width: 100%;
 }
