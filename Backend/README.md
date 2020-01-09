@@ -15,3 +15,5 @@ Alterar, no controller EmailController os parâmetros de email.Credentials e val
 #### Usando NuGet, abra o terminal e insira:
 
 ###### - Install-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -Version 1.0.5
+
+#### Qualquer outro problema, dê save all no projeto e de run no projeto novamente.
