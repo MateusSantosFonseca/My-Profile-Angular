@@ -1,4 +1,4 @@
-<div class="container margem-content">
+<div class="container margem-content animation-class">
 
   <h2 class="titulo-pagina text-center">Contato</h2>
   <span class="underline"></span>
@@ -16,8 +16,8 @@
         </div>
 
         <div class="my-3">
-          <input id="input-sobrenome" class="p-1 w-75" type="text" [formControl]="sobrenome" placeholder="Digite seu sobrenome">
-          <div class="mt-1 ml-5 pl-5" *ngIf="sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)">
+          <input id="input-assunto" class="p-1 w-75" type="text" [formControl]="assunto" placeholder="Digite o assunto">
+          <div class="mt-1 ml-5 pl-5" *ngIf="assunto.invalid && (assunto.dirty || assunto.touched)">
             <span class="mensagem-campo-preenchido-invalido">{{mensagemErro}}</span>
           </div>
         </div>

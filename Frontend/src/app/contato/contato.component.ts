@@ -22,7 +22,7 @@ export class ContatoComponent implements OnInit {
     Validators.maxLength(15)
   ]));
 
-  sobrenome = new FormControl('', Validators.compose([
+  assunto = new FormControl('', Validators.compose([
     Validators.required,
     Validators.minLength(2),
     Validators.maxLength(60)
@@ -49,7 +49,7 @@ export class ContatoComponent implements OnInit {
   constructor() {
     this.contadorCaracteres = '';
     this.contactForm.addControl('nome', this.nome);
-    this.contactForm.addControl('sobrenome', this.sobrenome);
+    this.contactForm.addControl('assunto', this.assunto);
     this.contactForm.addControl('email', this.email);
     this.contactForm.addControl('telefone', this.telefone);
     this.contactForm.addControl('mensagem', this.mensagem);
@@ -63,7 +63,7 @@ export class ContatoComponent implements OnInit {
     alert(this.nome.value + ', sua mensagem foi enviada com sucesso. Obrigado pelo contato!');
     // Abrir popup ou modal, ver algum servico aque faz isso para alertar que foi concluir com sucesso
     this.nome.reset();
-    this.sobrenome.reset();
+    this.assunto.reset();
     this.email.reset();
     this.telefone.reset();
     this.mensagem.reset();
