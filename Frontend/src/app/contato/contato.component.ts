@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { EmailModel } from './email.model';
+
+import { ContatoService } from './contato.service';
+
+
 @Component({
   selector: 'app-contato',
   templateUrl: './contato.component.html',
@@ -13,13 +18,14 @@ export class ContatoComponent implements OnInit {
   contadorCaracteres: string;
   mensagemErro = '* O campo foi preenchido incorretamente';
   emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  emailModelObject: EmailModel;
 
   contactForm = new FormGroup({});
 
   nome = new FormControl('', Validators.compose([
     Validators.required,
     Validators.minLength(3),
-    Validators.maxLength(15)
+    Validators.maxLength(120)
   ]));
 
   assunto = new FormControl('', Validators.compose([
@@ -46,7 +52,7 @@ export class ContatoComponent implements OnInit {
   ]));
 
 
-  constructor() {
+  constructor(private contatoService: ContatoService) {
     this.contadorCaracteres = '';
     this.contactForm.addControl('nome', this.nome);
     this.contactForm.addControl('assunto', this.assunto);
@@ -60,13 +66,30 @@ export class ContatoComponent implements OnInit {
 
   onSubmit() {
     console.log(this.contactForm.value);
-    alert(this.nome.value + ', sua mensagem foi enviada com sucesso. Obrigado pelo contato!');
     // Abrir popup ou modal, ver algum servico aque faz isso para alertar que foi concluir com sucesso
+    this.emailModelObject = new EmailModel();
+    this.emailModelObject.nomeRemetente = this.nome.value;
+    this.emailModelObject.assunto = this.assunto.value;
+    this.emailModelObject.emailRemetente = this.email.value;
+    this.emailModelObject.telefone = this.telefone.value;
+    this.emailModelObject.mensagem = this.mensagem.value;
+
+    this.contatoService
+          .enviarEmail(this.emailModelObject)
+          .subscribe(
+              data => console.log('success', data),
+              error => console.log('oops', error)
+    );
+
     this.nome.reset();
     this.assunto.reset();
     this.email.reset();
     this.telefone.reset();
     this.mensagem.reset();
+
+
+    // tslint:disable-next-line: max-line-length
+    alert(this.emailModelObject.nomeRemetente + ', sua mensagem foi enviada com sucesso. Obrigado pelo contato!');
   }
 
 }

@@ -17,6 +17,8 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { HabilidadeComponent } from './habilidade/habilidade.component';
 import { HistoricoComponent } from './historico/historico.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -29,12 +31,15 @@ import { HistoricoComponent } from './historico/historico.component';
     ExperienciaComponent,
     HabilidadeComponent,
     HistoricoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

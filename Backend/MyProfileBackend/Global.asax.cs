@@ -10,5 +10,8 @@ namespace MyProfileBackend
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
+
     }
+
+   
 }

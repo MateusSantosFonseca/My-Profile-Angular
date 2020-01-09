@@ -7,7 +7,7 @@ using MyProfileBackend.Models;
 
 namespace MyProfileBackend.Controllers
 {
-    [RoutePrefix("myprofilebackend")]
+    [RoutePrefix("myprofile")]
     public class EmailController : ApiController
     {
 
@@ -19,6 +19,7 @@ namespace MyProfileBackend.Controllers
             {
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
                 string emailPadraoDestinatario = "mateus-60@hotmail.com";
 
                 // Deve ser o mesmo do Credentials
@@ -33,16 +34,17 @@ namespace MyProfileBackend.Controllers
                                     + email.Telefone + "</span></p><p class=MsoNormal> <span lang=pt-BR style='font-size:14.0pt;font-family:Arial'>Mensagem: <p style='font-size:12.0pt;font-family:Arial;text-align:justify;word-break:break-all;line-height:1.6'>" 
                                     + email.Mensagem + "</p></p><p></p></div><hr><div style='text-align:center; margin-top:30px '>Este e-mail foi gerado automaticamente pelo site.</div>";
 
-                mail.IsBodyHtml = true;
 
+                mail.IsBodyHtml = true;
                 mail.Body = mensagemHtml;
 
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
 
                 //Alterar dentro das aspas o email e senha utilizado para enviar o email
-                SmtpServer.Credentials = new NetworkCredential("", "");
+                SmtpServer.Credentials = new NetworkCredential(mail.From.ToString(), "");
                 SmtpServer.EnableSsl = true;
+
 
                 SmtpServer.Send(mail);
 
@@ -52,7 +54,9 @@ namespace MyProfileBackend.Controllers
                 return Content(HttpStatusCode.Forbidden, ex.Message);
             }
 
-            return Ok();
+                return Ok();
+
         }
     }
+
 }
