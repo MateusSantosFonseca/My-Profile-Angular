@@ -96,6 +96,15 @@
   }
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 /* Margem necessária para o conteúdo não ficar embaixo do header ou footer */
 
 .margem-content {
@@ -172,4 +181,23 @@
 .botao-snippet:hover:before, .botao-snippet.hover:before, .botao-snippet:hover:after, .botao-snippet.hover:after {
   height: 100%;
   width: 100%;
+}
+
+/* Angular material snackbar styles customizadas */
+
+/* Cor do snackbar */
+.snackbar-customizado {
+  background-color: rgba(59, 89, 152, 1);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center !important;
+}
+
+/* Cor do texto da action */
+.mat-button-wrapper {
+  color: #fcfcfc;
+}
+
+/* Cor do botão da action */
+.mat-button:hover, .mat-button:active {
+  color: #fcfcfc !important;
 }

@@ -1,7 +1,7 @@
 ## My Profile - Angular
 
 ### Sobre
-Este é um sistema web com minhas informações pessoais, ténicas e profissionais.
+Este é um sistema web com minhas informações pessoais, técnicas e profissionais.
 
 ### Objetivo
 Este sistema web foi desenvolvido com a ideia compartilhar minhas informações pessoas, técnicas e profissionais. Além disso, foi desenvolvido um método rápido de me contatar profissionalmente por e-mail. Finalmente, um dos principais pontos deste projeto foi desenvolver minhas competências no desenvolvimento fullstack. 

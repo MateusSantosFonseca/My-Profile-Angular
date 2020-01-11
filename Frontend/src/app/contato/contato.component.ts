@@ -5,6 +5,8 @@ import { EmailModel } from './email.model';
 
 import { ContatoService } from './contato.service';
 
+import { GlobalService } from '../global.service';
+
 
 @Component({
   selector: 'app-contato',
@@ -52,7 +54,9 @@ export class ContatoComponent implements OnInit {
   ]));
 
 
-  constructor(private contatoService: ContatoService) {
+  constructor(private contatoService: ContatoService,
+              private globalService: GlobalService) {
+
     this.contadorCaracteres = '';
     this.contactForm.addControl('nome', this.nome);
     this.contactForm.addControl('assunto', this.assunto);
@@ -75,21 +79,22 @@ export class ContatoComponent implements OnInit {
     this.emailModelObject.mensagem = this.mensagem.value;
 
     this.contatoService
-          .enviarEmail(this.emailModelObject)
-          .subscribe(
-              data => console.log('success', data),
-              error => console.log('oops', error)
-    );
+      .enviarEmail(this.emailModelObject)
+      .subscribe(
+        (success) => {
+          this.globalService.openSnackBar('E-mail enviado com sucesso!', 3500, 'Ok');
+          // console.log(success);
+        },
+        (error) => {
+          this.globalService.openSnackBar('Erro. O e-mail não foi enviado, desculpe.', 3500, 'Ok');
+          // console.log(error);
+        }
+      );
 
     this.nome.reset();
     this.assunto.reset();
     this.email.reset();
     this.telefone.reset();
     this.mensagem.reset();
-
-
-    // tslint:disable-next-line: max-line-length
-    alert(this.emailModelObject.nomeRemetente + ', sua mensagem foi enviada com sucesso. Obrigado pelo contato!');
   }
-
 }
