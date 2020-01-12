@@ -105,6 +105,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.fixed{
+  position: fixed;
+}
+
 /* Margem necessária para o conteúdo não ficar embaixo do header ou footer */
 
 .margem-content {
@@ -190,6 +194,7 @@ body {
   background-color: rgba(59, 89, 152, 1);
   color: rgba(255, 255, 255, 0.7);
   text-align: center !important;
+  z-index: 1001;
 }
 
 /* Cor do texto da action */

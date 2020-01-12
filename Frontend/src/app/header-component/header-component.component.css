@@ -36,6 +36,7 @@ header {
 
 .margem-header {
   margin-bottom: 30px;
+  z-index: 1000;
 }
 
 /*Lembrar de inserir media query para margem-header*/
