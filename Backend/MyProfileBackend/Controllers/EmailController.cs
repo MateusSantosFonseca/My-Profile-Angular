@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 using System.Web.Http;
+// using System.Web.Http.Cors;
 using MyProfileBackend.Models;
 
 
@@ -11,6 +12,7 @@ namespace MyProfileBackend.Controllers
     public class EmailController : ApiController
     {
 
+        //[EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")] // Está config está presente no WebConfig (httpProtocol>customHeaders)
         [HttpPost]
         [Route("email")]
         public IHttpActionResult EnviarEmail([FromBody] EmailModel email)
@@ -39,6 +41,7 @@ namespace MyProfileBackend.Controllers
 
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
+
 
                 //Alterar dentro das aspas o email e senha utilizado para enviar o email
                 SmtpServer.Credentials = new NetworkCredential(mail.From.ToString(), "");

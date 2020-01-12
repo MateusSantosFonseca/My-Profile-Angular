@@ -69,8 +69,6 @@ export class ContatoComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
-    // Abrir popup ou modal, ver algum servico aque faz isso para alertar que foi concluir com sucesso
     this.emailModelObject = new EmailModel();
     this.emailModelObject.nomeRemetente = this.nome.value;
     this.emailModelObject.assunto = this.assunto.value;

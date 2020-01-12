@@ -10,8 +10,9 @@ namespace MyProfileBackend
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
             // Web API routes
+
+            config.EnableCors();
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

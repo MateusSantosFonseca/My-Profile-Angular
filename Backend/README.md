@@ -14,6 +14,10 @@ Alterar, no controller EmailController os parâmetros de email.Credentials e val
 
 #### Usando NuGet, abra o terminal e insira:
 
-###### - Install-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -Version 1.0.5
+###### Install-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -Version 2.0.1
 
-#### Qualquer outro problema, dê save all no projeto e de run no projeto novamente.
+#### Caso hajam problema com CORS:
+
+###### Install-Package Microsoft.AspNet.WebApi.Cors -Version 5.2.7
+
+#### Qualquer outro problema, dê save all, build e run no projeto novamente.
