@@ -63,6 +63,7 @@ export class ContatoComponent implements OnInit {
     this.contactForm.addControl('email', this.email);
     this.contactForm.addControl('telefone', this.telefone);
     this.contactForm.addControl('mensagem', this.mensagem);
+
   }
 
   ngOnInit() {

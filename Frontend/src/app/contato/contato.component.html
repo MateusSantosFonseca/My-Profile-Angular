@@ -7,7 +7,6 @@
 
     <div class="row mt-4 text-center">
       <div class="col-md-6 my-5">
-
         <div class="my-3">
           <input id="input-nome" class="p-1 w-75" type="text" [formControl]="nome" placeholder="Digite seu nome">
           <div class="mt-1 ml-5 pl-5" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
@@ -42,7 +41,6 @@
 
     <div class="row text-center">
       <div class="col-md-12">
-
         <div class="my-3">
           <textarea [(ngModel)]="contadorCaracteres" id="textarea-mensagem" type="text" maxlength="500"
             [formControl]="mensagem" placeholder="Digite sua mensagem"></textarea>
@@ -58,7 +56,6 @@
           *ngIf="((mensagem.dirty || mensagem.touched) && (contadorCaracteres.length == 500))">
           <span class="contador-caracteres">Você não possui mais caracteres disponíveis</span>
         </div>
-
       </div>
     </div>
 
@@ -69,6 +66,5 @@
     </div>
 
   </form>
-
 
 </div>
