@@ -13,9 +13,7 @@ import { GlobalService } from '../global.service';
 })
 
 export class ContatoService {
-  URL_API = `https://localhost:44330/myprofile/email/`;
-
-
+  URL_API = `http://localhost:3000/api/sendEmail`;
 
   constructor(private http: HttpClient,
               private globalService: GlobalService) { }
@@ -24,5 +22,4 @@ export class ContatoService {
     this.globalService.openSnackBar('Enviando e-mail...', 10000); // Este snackbar é demorado pois ele será interrompido por outro snackbar
     return this.http.post<EmailModel>(this.URL_API, email);
   }
-
 }
