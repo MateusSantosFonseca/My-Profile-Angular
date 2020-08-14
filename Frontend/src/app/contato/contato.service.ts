@@ -13,7 +13,7 @@ import { GlobalService } from '../global.service';
 })
 
 export class ContatoService {
-  URL_API = `http://localhost:3000/api/sendEmail`;
+  URL_API = `https://my-profile-angular-api-email.vercel.app/api/sendEmail`;
 
   constructor(private http: HttpClient,
               private globalService: GlobalService) { }
