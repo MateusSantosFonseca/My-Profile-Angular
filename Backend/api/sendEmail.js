@@ -22,7 +22,7 @@ const sendEmail = (req, res) => {
   mailer.sendMail(
     {
       from: body.emailRemetente,
-      to: "mateus.santos.fsc@gmail.com",
+      to: [process.env.GMAIL_TO],
       subject: body.assunto || "[No subject]",
       html: message || "[No message]",
     },
